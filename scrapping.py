@@ -26,27 +26,28 @@ def main():
                 new_file_name = linkls[-4] + '_' + linkls[-3] + '_' + linkls[-1][:-3]
                 print (new_file_name)
                 if validators.url(link): #check if url is valid
-                    file_name = wget.download(link) #download from url
-                    print('\n' + new_file_name + ' downloaded')
-
                     try:
-                        with gzip.open(file_name,'r') as f_in, open(file_name[:-3],'wb') as f_out:
-                            shutil.copyfileobj(f_in, f_out) #unzip
-                            print('file unzipped')
-                    except: #unzip error means file url empty so skip this
+                        file_name = wget.download(link) #download from url
+                        print('\n' + new_file_name + ' downloaded')
+
+                        try:
+                            with gzip.open(file_name,'r') as f_in, open(file_name[:-3],'wb') as f_out:
+                                shutil.copyfileobj(f_in, f_out) #unzip
+                                print('file unzipped')
+                        except: #unzip error means file url empty so skip this
+                            os.remove(file_name)
+                            os.remove(file_name[:-3])
+                            print(new_file_name + ' is empty')
+                            pass
+                            s3 = boto3.client('s3')
+                        s3.upload_file(file_name[:-3], 'airbnbcrawl', new_file_name)
+                        print("Upload to s3")
                         os.remove(file_name)
                         os.remove(file_name[:-3])
-                        print(new_file_name + ' is empty')
+                        print('file removed')
+                    except:
+                        print(new_file_name + ' URL not valid')
                         pass
-                         s3 = boto3.client('s3')
-                    s3.upload_file(file_name[:-3], 'airbnbcrawl', new_file_name)
-                    print("Upload to s3")
-                    os.remove(file_name)
-                    os.remove(file_name[:-3])
-                    print('file removed')
-                else:
-                    print(new_file_name + ' URL not valid')
-
 if __name__ == "__main__":
     main()
--- INSERT --                  
+                
