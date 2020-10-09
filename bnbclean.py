@@ -38,3 +38,7 @@ df1.write \
         .option("url", "jdbc:postgresql://10.0.0.8:5432/my_db") \
         .option("dbtable", "bnbclean") \
         .option("user", "test") \
+        .option("password", "test") \
+        .option("driver", "org.postgresql.Driver") \
+        .mode("Overwrite") \
+        .save()
