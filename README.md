@@ -1,4 +1,4 @@
-# DE_Project
+# BnB-Pay
 When looking to buy a property in a city, rental income that can be obtained from an AirBnB hosting over the course of the mortgage is required so as to plan loans and expenses.
 
 Data from spending and economic activity and AirBnB would provide hosts or prospective hosts with the ability to look at the sensitivity of pricing to macroeconomic conditions.
