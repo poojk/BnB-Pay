@@ -38,7 +38,7 @@ app.layout = html.Div(children=[
         ),
     html.H4(children='Select State:'),
     dcc.Dropdown(id='state',options=[
-            {'label':i, 'value':i} for i in df.state.unique()
+        {'label':i, 'value':i} for i in df.state.unique()
         ], placeholder = 'Filter by state...'),
     html.H4(children='Select city:'),
     dcc.Dropdown(id='city', placeholder='Filter by city...'),
@@ -71,5 +71,5 @@ def final(state,city,bedrooms):
     percent = df[(df.state == state) & (df.city == city) & (df.bedrooms == bedrooms)]['%']
     return bnb,mortgage,percent
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8050, host="ec2-18-190-120-167.us-east-2.compute.amazonaws.com")
+    app.run_server(debug=True, port=8050, host="0.0.0.0")
                                                                                                             
