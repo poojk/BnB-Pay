@@ -21,7 +21,7 @@ If I was looking at moving somewhere and my budget depended on my ability to get
 
 ## Architecture
 
-![github-small](https://github.com/poojk/BnB-Pay/blob/master/Untitled.png)
+![github-small](https://github.com/poojk/BnB-Pay/blob/master/img.png)
 
 ## Dataset
 
