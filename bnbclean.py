@@ -27,11 +27,14 @@ df = df.filter(~F.col('city').contains("-"))
 df = df.filter(~F.col('city').contains("^[0-9]*$"))
 df = df.filter(~F.col('city').contains("*"))
 df = df.withColumn('city', F.ltrim(df.city))
+df = df.withColumn("city", F.initcap(F.col("city")))
+df = df.filter(~df.city.rlike("[ ,;{}()\n\t=]"))
+df = df.filter(~df.city.rlike("[^0-9A-Za-z]"))
 df = df.filter(~F.col('city').contains("("))
-df = df.groupBy('city','bedrooms').agg(F.avg('average').alias('average'))
+df = df.groupBy('city','bedrooms').agg(F.avg('average').alias('average'),F.first('state'))
+df = df.withColumnRenamed('first(state)','state')
 df = df.sort('city')
 df1 = df.withColumn('average', F.round(df['average'], 0))
-#agg_df.show()
 
 df1.write \
         .format("jdbc") \
