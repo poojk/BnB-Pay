@@ -6,11 +6,6 @@ Assess properties and rental income.
 
 <hr/>
 
-## How to install and get it up and running
-
-
-<hr/>
-
 ## Introduction
 
 When looking to buy a property in a city, rental income that can be obtained from an AirBnB hosting over the course of the mortgage is required so as to plan loans and expenses.
@@ -23,7 +18,7 @@ If I was looking at moving somewhere and my budget depended on my ability to get
 
 ![github-small](https://github.com/poojk/BnB-Pay/blob/master/img.png)
 
-## Dataset
+## Datasets
 
 The data sets used are in the format (.csv). 
 * Airbnb data from insideairbnb.com
