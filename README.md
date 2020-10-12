@@ -25,8 +25,12 @@ If I was looking at moving somewhere and my budget depended on my ability to get
 
 ## Dataset
 
-The data sets used are in the format (.csv). Airbnb data from insideairbnb.com, interest rate data from the Federal Reserve Economic Database (FRED), Property tax data from taxfoundation.org and house price data from zillow.com are used to calculate metrics. 
+The data sets used are in the format (.csv). 
+* Airbnb data from insideairbnb.com
+* Interest rate data from the Federal Reserve Economic Database (FRED) 
+* Property tax data from taxfoundation.org 
+* House price data from zillow.com 
 
-## Engineering challenges
 
-## Trade-offs
+## Demo
+[Link](http://dataengg.icu)
